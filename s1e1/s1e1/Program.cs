@@ -14,9 +14,7 @@ namespace s1e1
             Console.WriteLine("Current date (year/month/day): " + DateTime.Now.ToString("yyyy/MM/dd"));
             Console.WriteLine("Number of days elapsed since start of the year: " + DateTime.Now.DayOfYear);
             var year = DateTime.Now.Year;
-
-            //no need for error handling here, humanity will not last this long
-            while (true)
+            while (year<DateTime.MaxValue.Year)
             {
                 year++;
                 if (DateTime.IsLeapYear(year) && new DateTime(year, 01, 01).DayOfWeek.Equals(DayOfWeek.Tuesday))
