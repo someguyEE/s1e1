@@ -11,9 +11,9 @@ namespace s1e1
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Current date: " + DateTime.UtcNow.Date.ToString("yyyy/MM/dd"));
-            Console.WriteLine("Number of days elapsed since start of the year: " + DateTime.UtcNow.DayOfYear);
-            var year = DateTime.UtcNow.Year;
+            Console.WriteLine("Current date (year/month/day): " + DateTime.Now.ToString("yyyy/MM/dd"));
+            Console.WriteLine("Number of days elapsed since start of the year: " + DateTime.Now.DayOfYear);
+            var year = DateTime.Now.Year;
 
             //no need for error handling here, humanity will not last this long
             while (true)
@@ -39,7 +39,7 @@ namespace s1e1
             }
 
             //general error in case of user-input shenaniganz, no time to consider all the weird options
-            Console.WriteLine("Enter space-separated numbers to calculate total sum (e.g. 1 34.5 -100).");
+            Console.WriteLine("Enter space-separated numbers to calculate total sum (e.g. 1 34.5 -100)");
             try
             {
                 List<double> numbers = Console.ReadLine().Split(' ').Select(double.Parse).ToList();
@@ -47,9 +47,9 @@ namespace s1e1
             }
             catch
             {
-                Console.WriteLine("invalid data was entered");
+                Console.WriteLine("Invalid data was entered");
             }
-            Console.WriteLine("press ENTER to exit the app");
+            Console.WriteLine("Press ENTER to exit the app");
             Console.ReadLine();
         }
     }
